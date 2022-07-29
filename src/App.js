@@ -1,24 +1,26 @@
-import { useEffect, useState } from "react";
-import Wordle from "./components/Wordle"
-function App() {
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import { useEffect, useState } from 'react'
+import Wordle from './components/Wordle'
+import data from './data/db'
+
+function App () {
   const [solution, setSolution] = useState(null)
 
-  //Corre en cada render
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
-    .then(res => res.json())
-    .then(json => {
-      const randomSolution = json[Math.floor(Math.random() * json.length)]
-      setSolution(randomSolution.word)
-    })
-  }, /*dependency array*/[setSolution])
+    console.log(data)
+    const randomSolution = data[Math.floor(Math.random() * data.length)]
+    setSolution(randomSolution.word)
+  }, [setSolution])
 
   return (
-    <div className="App">
-      <h1>Wordle</h1>
-      {solution && <Wordle solution={solution}/>}
+    <div className='App'>
+      <Typography variant='h1'>Wordle</Typography>
+      <Container maxWidth='xs' sx={{ alignContent: 'center' }}>
+        {solution && <Wordle solution={solution} />}
+      </Container>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

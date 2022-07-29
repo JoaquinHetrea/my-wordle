@@ -1,17 +1,24 @@
-import React, { useEffect } from "react";
-import useWordle from "../hooks/useWordle";
+import React, { useEffect } from 'react'
+import useWordle from '../hooks/useWordle'
+import Typography from '@mui/material/Typography'
 
-export default function Wordle({ solution }){
-    const {currentGuess, handleKeyUp } = useWordle(solution)
+import Grilla from './Grilla'
 
-    useEffect(() => {
-        window.addEventListener('keyup', handleKeyUp)
+export default function Wordle ({ solution }) {
+  const { turn, history, currentGuess, guesses, handleKeyUp } = useWordle(solution)
 
-        //Evita que haya muchos event listeners iguales?
-        return () => window.removeEventListener('keyup', handleKeyUp)
-    }, [handleKeyUp])
+  useEffect(() => {
+    window.addEventListener('keyup', handleKeyUp)
 
-    return (
-        <div>Current Guess: { currentGuess }</div>
-    )
+    // Evita que haya muchos event listeners iguales?
+    return () => window.removeEventListener('keyup', handleKeyUp)
+  }, [handleKeyUp])
+
+  return (
+    <>
+      <Typography><b>Solution:</b> {solution}</Typography>
+      <Typography><b>Current Guess:</b> {currentGuess}</Typography>
+      <Grilla currentGuess={currentGuess} guesses={guesses} turn={turn} />
+    </>
+  )
 }
