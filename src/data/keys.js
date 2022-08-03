@@ -1,4 +1,4 @@
-const data2 = [
+const keys = [
   { key: 'q' },
   { key: 'w' },
   { key: 'e' },
@@ -30,4 +30,4 @@ const data2 = [
   { key: 'Backspace' }
 ]
 
-export default data2
+export default keys

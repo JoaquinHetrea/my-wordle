@@ -75,8 +75,6 @@ const useWordle = (solution) => {
   }
 
   const handleKeyUp = ({ key }) => {
-    console.log('key:', key)
-
     if (key === 'Enter') {
       if (turn > 6) {
         console.log('Ya perdiste')

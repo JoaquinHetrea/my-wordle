@@ -3,8 +3,6 @@ import Box from '@mui/material/Box'
 import Row from './Row'
 
 export default function Grilla ({ currentGuess, guesses, turn }) {
-  console.log('guesses', guesses)
-
   return (
     <Box display='flex' sx={{ justifyContent: 'center' }}>
       <Box sx={{ maxWidth: 325 }}>
