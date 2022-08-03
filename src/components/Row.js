@@ -1,5 +1,6 @@
 import { Grid } from '@mui/material'
 import Item from './Item'
+import colors from '../data/colors'
 
 export default function Row ({ guess, currentGuess }) {
   if (currentGuess) {
@@ -21,7 +22,7 @@ export default function Row ({ guess, currentGuess }) {
       <>
         {guess.map((value, index) => (
           <Grid item xs={2} key={index}>
-            <Item variant='outlined' square elevation={0} color={value.color} an>{value.key}</Item>
+            <Item variant='outlined' square elevation={0} textColor='#FFF' color={colors[value.color]}>{value.key}</Item>
           </Grid>
         ))}
       </>

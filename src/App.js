@@ -1,8 +1,7 @@
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
 import { useEffect, useState } from 'react'
 import Wordle from './components/Wordle'
 import data from './data/db'
+import Box from '@mui/material/Box'
 
 function App () {
   const [solution, setSolution] = useState(null)
@@ -14,12 +13,9 @@ function App () {
   }, [setSolution])
 
   return (
-    <div className='App'>
-      <Typography variant='h1'>Wordle</Typography>
-      <Container maxWidth='xs' sx={{ alignContent: 'center' }}>
-        {solution && <Wordle solution={solution} />}
-      </Container>
-    </div>
+    <Box sx={{ height: '100vh' }}>
+      {solution && <Wordle solution={solution} />}
+    </Box>
   )
 }
 

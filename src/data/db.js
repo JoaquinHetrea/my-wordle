@@ -16,7 +16,7 @@ const data = [
   { id: 15, word: 'quedar' },
   { id: 16, word: 'innato' },
   { id: 17, word: 'vector' },
-  { id: 18, word: 'cabaña' },
+  { id: 18, word: 'matriz' },
   { id: 19, word: 'caviar' },
   { id: 20, word: 'apelar' },
   { id: 21, word: 'chisme' },
